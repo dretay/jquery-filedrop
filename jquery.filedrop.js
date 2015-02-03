@@ -211,7 +211,7 @@
 
       if (opts.allowedfiletypes.push && opts.allowedfiletypes.length) {
         for(var fileIndex = files.length;fileIndex--;) {
-          if(!files[fileIndex].type || $.inArray(files[fileIndex].type, opts.allowedfiletypes) < 0) {
+          if($.inArray(files[fileIndex].type, opts.allowedfiletypes) < 0) {
             opts.error(errors[3], files[fileIndex]);
             return false;
           }
@@ -411,7 +411,7 @@
                   this.send(ui8a.buffer);
               }
           }
-          
+
         xhr.sendAsBinary(builder);
 
         global_progress[global_progress_index] = 0;
